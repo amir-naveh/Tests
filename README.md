@@ -1,5 +1,4 @@
-# Classiq
-
+![# Classiq](abc/classiq-logo.svg)
 ## Create Quantum Programs with Classiq
 
 ---
@@ -70,7 +69,7 @@ You can find a wide collection of quantum functions, algorithms, applications an
 
 Usage Example - Portfolio Optimization:
 
-Go to the Portfolio optimization directory: `Applications/Finance/Portfolio Optimizaition`
+Go to the Portfolio optimization directory: `applications/finance/portfolio_optimizaition`
 
 ### In the IDE:
 
@@ -129,30 +128,36 @@ qfunc main(output res: qbit[4]){
 2. Press Synthesize:
   <center>
 
-  ![Model_Screenshot_3_plus_5.png](../resources/README_resources/Model_Screenshot_3_plus_5.png)
+  ![Model_Screenshot_3_plus_5.png](abc/Model_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Execute:
   <center>
 
-  ![Program_Screenshot_3_plus_5.png](../resources/README_resources/Program_Screenshot_3_plus_5.png)
+  ![Program_Screenshot_3_plus_5.png](abc/Program_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Run:
   <center>
 
-  ![Execution_Screenshot_3_plus_5.png](../resources/README_resources/Execution_Screenshot_3_plus_5.png)
+  ![Execution_Screenshot_3_plus_5.png](abc/Execution_Screenshot_3_plus_5.png)
 
 </center>
 
 4. View Results:
   <center>
 
-  ![Jobs_Screenshot_3_plus_5.png](../resources/README_resources/Jobs_Screenshot_3_plus_5.png)
+  ![Jobs_Screenshot_3_plus_5.png](abc/Jobs_Screenshot_3_plus_5.png)
 
 </center>
 
 ### In the SDK:
 # TBD
+
+
+<hr>
+
+Have questions? Feedback? Something to share? 
+Welcome to join our open <a href="https://short.classiq.io/join-slack">Slack Community</a>
