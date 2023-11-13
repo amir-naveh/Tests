@@ -1,7 +1,11 @@
-![# Classiq](README_resources/classiq-logo.svg)
-## Create Quantum Programs with Classiq
+<center>
 
----
+<img src="README_resources/classiq-logo.svg" width="300" height="180">
+
+# Create Quantum Programs with Classiq
+</center>
+
+
 
 The **Classiq** platform is all you need for creating any quantum program. Read more for the details.
 
