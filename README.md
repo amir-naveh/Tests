@@ -2,8 +2,10 @@
 
 <img src="README_resources/classiq-logo.svg" width="300" height="180">
 
-## Create Quantum Programs with Classiq
 </center>
+
+## Create Quantum Programs with Classiq
+
 
 
 
