@@ -1,4 +1,4 @@
-![# Classiq](abc/classiq-logo.svg)
+![# Classiq](README_resources/classiq-logo.svg)
 ## Create Quantum Programs with Classiq
 
 ---
@@ -128,34 +128,63 @@ qfunc main(output res: qbit[4]){
 2. Press Synthesize:
   <center>
 
-  ![Model_Screenshot_3_plus_5.png](abc/Model_Screenshot_3_plus_5.png)
+  ![Model_Screenshot_3_plus_5.png](README_resources/Model_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Execute:
   <center>
 
-  ![Program_Screenshot_3_plus_5.png](abc/Program_Screenshot_3_plus_5.png)
+  ![Program_Screenshot_3_plus_5.png](README_resources/Program_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Run:
   <center>
 
-  ![Execution_Screenshot_3_plus_5.png](abc/Execution_Screenshot_3_plus_5.png)
+  ![Execution_Screenshot_3_plus_5.png](README_resources/Execution_Screenshot_3_plus_5.png)
 
 </center>
 
 4. View Results:
   <center>
 
-  ![Jobs_Screenshot_3_plus_5.png](abc/Jobs_Screenshot_3_plus_5.png)
+  ![Jobs_Screenshot_3_plus_5.png](README_resources/Jobs_Screenshot_3_plus_5.png)
 
 </center>
 
 ### In the SDK:
-# TBD
+```python
+from classiq import QArray, Output, allocate, QFunc, X, QInt, synthesize, create_model, show, execute
 
+@QFunc
+def get_3(x: Output[QArray]) -> None:
+    
+    allocate(2,x)
+    X(x[0])
+    X(x[1])
+
+@QFunc
+def get_5(x: Output[QArray]) -> None:
+    
+    allocate(3,x)
+    X(x[0])
+    X(x[2])
+
+@QFunc
+def main(res: Output[QInt]) -> None:
+    a = QInt("a")
+    b = QInt("b")
+    get_3(a)
+    get_5(b)
+    res |= a + b   # should be 8
+
+qprog = synthesize(create_model(main))
+
+show(qprog)
+result = execute(qprog).result()
+print(result[0].value.parsed_counts)
+```
 
 <hr>
 
