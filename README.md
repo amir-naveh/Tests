@@ -1,12 +1,13 @@
-# Classiq 
+# Classiq
+
 ## Create Quantum Programs with Classiq
+
 ---
 
-
-The **Classiq** platform is all you need for creating any quantum program. Read more for the details. 
+The **Classiq** platform is all you need for creating any quantum program. Read more for the details.
 
 ```mermaid
-flowchart 
+flowchart
     IDEInput[<a href='https://platform.classiq.io/'>Classiq IDE</a>]
 
     SDKInput[<a href='https://docs.classiq.io/latest/getting-started/python-sdk/'>Classiq python SDK</a>]
@@ -41,7 +42,7 @@ flowchart
     Execution --> Azure
     Execution --> Nvidia
 
-   
+
 
 
 ```
@@ -63,59 +64,95 @@ flowchart
 
 <hr>
 
-
 ## Classiq's Github Repository
- You can find a wide collection of quantum functions, algorithms, applications and tutorials built with Classiq. 
+
+You can find a wide collection of quantum functions, algorithms, applications and tutorials built with Classiq.
 
 Usage Example - Portfolio Optimization:
 
 Go to the Portfolio optimization directory: `Applications/Finance/Portfolio Optimizaition`
 
-
-=== "IDE"
+### In the IDE:
 
 1. Sign up to the <a href='https://platform.classiq.io/'>classiq platform</a>
 2. Upload the `.qmod` file to the <a href='https://platform.classiq.io/synthesis'>synthesis tab</a>
 
-=== "SDK"
+### In the SDK:
 
 1. Start with downloading Classiq:
+
 ```bash
 pip install -U classiq
 ```
+
 2. Download the `.ipynb` file
-3. Run the notebook in your preferred environment 
+3. Run the notebook in your preferred environment
 
-
+<hr>
 
 ## Build Your Own
- With Classiq, you can build anything. Classiq provides a powerful modeling language to describe any quantum program, which can then be synthesized and executed on any hardware or simulator. 
 
- ### 3+5 with Classiq
+With Classiq, you can build anything. Classiq provides a powerful modeling language to describe any quantum program, which can then be synthesized and executed on any hardware or simulator. Explore our <a href="https://docs.classiq.io/latest/user-guide/">Documentation</a> to learn everything.
 
- Here is how to build an 
+### 3+5 with Classiq
 
- ```
+### In the IDE:
+
+1. Create a model (paste in the <a href="https://platform.classiq.io/dsl-synthesis">`model`</a> tab)
+
+```
 qfunc get_3(output x: qbit[2]){
-  x0: qbit;
-  x1: qbit;
-  allocate<2>(x);
-  x -> {x0, x1};
-  X(x0);
-  X(x1);
-  {x0, x1} -> x;
+ x0: qbit;
+ x1: qbit;
+ allocate<2>(x);
+ x -> {x0, x1};
+ X(x0);
+ X(x1);
+ {x0, x1} -> x;
 }
 
 qfunc get_5(output x: qbit[3]){
-  allocate<3>(x);
-  X(x[0:1]);
-  X(x[2:3]);
+ allocate<3>(x);
+ X(x[0:1]);
+ X(x[2:3]);
 }
 
 qfunc main(output res: qbit[4]){
-  a: qbit[2];
-  b: qbit[3];
-  get_3(a);
-  get_5(b);
-  res = a + b;
+ a: qbit[2];
+ b: qbit[3];
+ get_3(a);
+ get_5(b);
+ res = a + b;
 }
+```
+
+2. Press Synthesize:
+  <center>
+
+  ![Model_Screenshot_3_plus_5.png](../resources/README_resources/Model_Screenshot_3_plus_5.png)
+
+</center>
+
+3. Press Execute:
+  <center>
+
+  ![Program_Screenshot_3_plus_5.png](../resources/README_resources/Program_Screenshot_3_plus_5.png)
+
+</center>
+
+3. Press Run:
+  <center>
+
+  ![Execution_Screenshot_3_plus_5.png](../resources/README_resources/Execution_Screenshot_3_plus_5.png)
+
+</center>
+
+4. View Results:
+  <center>
+
+  ![Jobs_Screenshot_3_plus_5.png](../resources/README_resources/Jobs_Screenshot_3_plus_5.png)
+
+</center>
+
+### In the SDK:
+# TBD
