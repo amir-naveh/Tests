@@ -1,12 +1,8 @@
-<center>
+<div align="center">
+    <img src="README_resources/classiq-logo.svg" width="400" height="240">
+</div>
 
-<img src="README_resources/classiq-logo.svg" width="300" height="180">
-
-</center>
-
-## Create Quantum Programs with Classiq
-
-
+# Create Quantum Programs with Classiq
 
 
 The **Classiq** platform is all you need for creating any quantum program. Read more for the details.
@@ -107,13 +103,9 @@ With Classiq, you can build anything. Classiq provides a powerful modeling langu
 
 ```
 qfunc get_3(output x: qbit[2]){
- x0: qbit;
- x1: qbit;
- allocate<2>(x);
- x -> {x0, x1};
- X(x0);
- X(x1);
- {x0, x1} -> x;
+allocate<2>(x);
+ X(x[0:1]);
+ X(x[1:2]);
 }
 
 qfunc get_5(output x: qbit[3]){
@@ -132,50 +124,63 @@ qfunc main(output res: qbit[4]){
 ```
 
 2. Press Synthesize:
-  <center>
+<center>
 
-  ![Model_Screenshot_3_plus_5.png](README_resources/Model_Screenshot_3_plus_5.png)
+![Model_Screenshot_3_plus_5.png](README_resources/Model_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Execute:
-  <center>
+<center>
 
-  ![Program_Screenshot_3_plus_5.png](README_resources/Program_Screenshot_3_plus_5.png)
+![Program_Screenshot_3_plus_5.png](README_resources/Program_Screenshot_3_plus_5.png)
 
 </center>
 
 3. Press Run:
-  <center>
+<center>
 
-  ![Execution_Screenshot_3_plus_5.png](README_resources/Execution_Screenshot_3_plus_5.png)
+![Execution_Screenshot_3_plus_5.png](README_resources/Execution_Screenshot_3_plus_5.png)
 
 </center>
 
 4. View Results:
-  <center>
+<center>
 
-  ![Jobs_Screenshot_3_plus_5.png](README_resources/Jobs_Screenshot_3_plus_5.png)
+![Jobs_Screenshot_3_plus_5.png](README_resources/Jobs_Screenshot_3_plus_5.png)
 
 </center>
 
 ### In the SDK:
+
 ```python
-from classiq import QArray, Output, allocate, QFunc, X, QInt, synthesize, create_model, show, execute
+from classiq import (
+    QArray,
+    Output,
+    allocate,
+    QFunc,
+    X,
+    QInt,
+    synthesize,
+    create_model,
+    show,
+    execute,
+)
+
 
 @QFunc
 def get_3(x: Output[QArray]) -> None:
-    
-    allocate(2,x)
+    allocate(2, x)
     X(x[0])
     X(x[1])
 
+
 @QFunc
 def get_5(x: Output[QArray]) -> None:
-    
-    allocate(3,x)
+    allocate(3, x)
     X(x[0])
     X(x[2])
+
 
 @QFunc
 def main(res: Output[QInt]) -> None:
@@ -183,7 +188,8 @@ def main(res: Output[QInt]) -> None:
     b = QInt("b")
     get_3(a)
     get_5(b)
-    res |= a + b   # should be 8
+    res |= a + b  # should be 8
+
 
 qprog = synthesize(create_model(main))
 
@@ -194,5 +200,5 @@ print(result[0].value.parsed_counts)
 
 <hr>
 
-Have questions? Feedback? Something to share? 
+Have questions? Feedback? Something to share?
 Welcome to join our open <a href="https://short.classiq.io/join-slack">Slack Community</a>
