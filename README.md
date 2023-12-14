@@ -1,9 +1,8 @@
-<div align="center">
-    <img src="README_resources/classiq-logo.svg" width="400" height="240">
+<div align="left">
+    <img src="README_resources/classiq-logo.svg" width="300" height="150">
 </div>
 
 # Create Quantum Programs with Classiq
-
 
 The **Classiq** platform is all you need for creating any quantum program. Read more for the details.
 
@@ -26,7 +25,7 @@ flowchart
     ExternalProgram[<a href='https://docs.classiq.io/latest/user-guide/platform/executor/alternative-formats/'>Any Format, e.g QASM</a>]
 
     IBM[IBM]
-    AWS[AWS Braket]
+    Amazon[Amazon Braket]
     Azure[Azure Quantum]
     Nvidia[Nvidia]
 
@@ -39,7 +38,7 @@ flowchart
     QuantumProgram --> Analyze;
     QuantumProgram --> Execution;
     Execution --> IBM
-    Execution --> AWS
+    Execution --> Amazon
     Execution --> Azure
     Execution --> Nvidia
 
